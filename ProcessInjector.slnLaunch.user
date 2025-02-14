@@ -1,0 +1,41 @@
+[
+  {
+    "Name": "新建配置文件",
+    "Projects": [
+      {
+        "Path": "ProcessInjector\\ProcessInjector.vcxproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "ProcessInjector.UI\\ProcessInjector.UI.vcxproj",
+        "Action": "Start"
+      }
+    ]
+  },
+  {
+    "Name": "CppUI",
+    "Projects": [
+      {
+        "Path": "ProcessInjector\\ProcessInjector.vcxproj",
+        "Action": "StartWithoutDebugging"
+      },
+      {
+        "Path": "ProcessInjector.UI\\ProcessInjector.UI.vcxproj",
+        "Action": "StartWithoutDebugging"
+      }
+    ]
+  },
+  {
+    "Name": "CsUI",
+    "Projects": [
+      {
+        "Path": "ProcessInjector\\ProcessInjector.vcxproj",
+        "Action": "StartWithoutDebugging"
+      },
+      {
+        "Path": "ProcessInjector.UIcs\\ProcessInjector.UIcs.csproj",
+        "Action": "StartWithoutDebugging"
+      }
+    ]
+  }
+]
