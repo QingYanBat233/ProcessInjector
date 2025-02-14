@@ -1,9 +1,9 @@
 #include <windows.h>
 #include <string>
 #include <iostream>
+#define DLL_EXPORT extern "C" __declspec(dllexport)
 
-
-extern "C" __declspec(dllexport) bool InjectDLL(DWORD targetProcessID, const char* dllPath);
+DLL_EXPORT bool InjectDLL(DWORD targetProcessID, const char* dllPath);
 
 // 远程线程注入的实现
 bool InjectDLL(DWORD targetProcessID, const char* dllPath) {
@@ -59,7 +59,7 @@ bool InjectDLL(DWORD targetProcessID, const char* dllPath) {
     return true;
 }
 
-// DLL入口函数
+//DLL入口函数
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved) {
     switch (ul_reason_for_call) {
     case DLL_PROCESS_ATTACH:

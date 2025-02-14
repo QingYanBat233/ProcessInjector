@@ -6,9 +6,19 @@ class Program
     [DllImport("ProcessInjector.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
     public static extern bool InjectDLL(uint targetProcessID, string dllPath);
 
+    private const string CONFIG_PATH = "config";
+
     static void Main(string[] args)
     {
-        Process[] processes = Process.GetProcessesByName("notepad");
+        if (!File.Exists(CONFIG_PATH)) 
+        {
+            Environment.Exit(1);
+        }
+        if (File.ReadAllLines(CONFIG_PATH).Length != 2)
+        {
+            Environment.Exit(2);
+        }
+        Process[] processes = Process.GetProcessesByName(File.ReadAllLines(CONFIG_PATH)[0]);
         if (processes.Length == 0)
         {
             Console.WriteLine("未找到目标进程！");
@@ -16,7 +26,7 @@ class Program
         }
 
         uint targetProcessID = (uint)processes[0].Id;
-        string dllPath = @"C:\Users\16176\source\repos\ProcessInjector\x64\Debug\ExampleDLL.dll"; // 替换为你要注入的DLL路径
+        string dllPath = File.ReadAllLines(CONFIG_PATH)[1];
 
         // 调用InjectDLL函数
         bool result = InjectDLL(targetProcessID, dllPath);

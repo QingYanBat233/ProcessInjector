@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProcessInjector.UIcs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40043199dc7dbc2b75d05b660efec843c41b37af")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProcessInjector.UIcs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProcessInjector.UIcs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
